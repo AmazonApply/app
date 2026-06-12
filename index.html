@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -289,18 +288,19 @@
 
 </div>
 
+<!-- SCRIPT DE TRACKING DINÁMICO CORREGIDO AL 100% -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // 1. Tu link base de CPA proporcionado
-        var linkBaseCPA = "https://taprkr.com/r/eyJ0IjoicGxheWZ1bC1jcGktcmV2c2hhcmUiLCJ0aWQiOiI5OWI0ZWNkMTc4OGU3YjNmOTMxZSIsInRzIjoxNzgxMjI2NzY2NDQ2fQ==";
+        // 1. Tu link base limpio (sacado directamente del token actual de tu panel)
+        var linkBaseCPA = "https://taprkr.com/r/eyJ0IjoicGxheWZ1bC1jcGktcmV2c2hhcmUiLCJ0aWQiOiI5OWI0ZWNkMTc4OGU3YjNmOTMxZSIsInRzIjoxNzgxMjM5MDAwNTAyfQ";
 
-        // 2. Generar un ID único basado en tiempo + número aleatorio
+        // 2. Generar el ID único dinámico por cada usuario (Ej: tk1781239123_456)
         var idUnico = "tk" + Math.floor(Date.now() / 1000) + "_" + Math.floor(Math.random() * 1000);
 
-        // 3. Unir el link base con el parámetro dinámico s1
-        var linkFinal = linkBaseCPA + "&s1=" + idUnico;
+        // 3. Estructuración idéntica a tu panel: ?s1=[ID_DINAMICO]&feb=1
+        var linkFinal = linkBaseCPA + "?s1=" + idUnico + "&feb=1";
 
-        // 4. Inyectar el enlace generado directamente en el botón
+        // 4. Acoplar de manera segura al botón de la landing
         var boton = document.getElementById("btnCPA");
         if(boton) {
             boton.href = linkFinal;
