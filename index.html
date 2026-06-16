@@ -79,7 +79,7 @@
             font-weight: 700;
         }
 
-        /* SECCIÓN DE PROGRESO DE LA OPERACIÓN (ALTO PARA SOI) */
+        /* SECCIÓN DE PROGRESO DE LA OPERACIÓN */
         .progress-box { 
             padding: 20px 20px 10px 20px; 
             text-align: center; 
@@ -107,7 +107,7 @@
             position: absolute; 
             left: 0; 
             top: 0;
-            background: linear-gradient(90deg, #ff9900 0%, #ffcc66 50%, #ff9900 100%);
+            background: linear-gradient(90deg, #00d632 0%, #a3ffb8 50%, #00d632 100%);
             background-size: 200% 100%;
             animation: live-loading-glow 1.5s infinite linear;
         }
@@ -131,10 +131,10 @@
             text-align: center;
         }
         
-        /* CUADRO INFORMATIVO DE ALERTA */
+        /* CUADRO INFORMATIVO CON EL NUEVO GANCHO INTEGRADO */
         .alert-info-box { 
             background-color: #f8fafc; 
-            border-left: 4px solid #10b981; 
+            border-left: 4px solid #00d632; 
             padding: 14px 16px; 
             font-size: 13.5px; 
             color: #333333; 
@@ -160,7 +160,7 @@
         
         .steps-list li::before { 
             content: "✓"; 
-            color: #10b981; 
+            color: #00d632; 
             font-weight: bold; 
             font-size: 16px; 
             position: absolute;
@@ -168,31 +168,31 @@
             top: 0px;
         }
 
-        /* BOTÓN DE ACCIÓN (VERDE PARA CONFIRMACIÓN) */
+        /* BOTÓN DE ACCIÓN COMPATIBLE CON EL GANCHO */
         .btn-verify { 
             display: block;
             width: 100%; 
-            background-color: #10b981; 
+            background-color: #00d632; 
             color: #ffffff; 
             text-decoration: none;
             text-align: center;
             padding: 16px; 
-            font-size: 15.5px; 
+            font-size: 14px; 
             font-weight: 800; 
             border-radius: 6px; 
             cursor: pointer; 
             text-transform: uppercase; 
-            box-shadow: 0 4px 0 #059669; 
+            box-shadow: 0 4px 0 #00a324; 
             transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
         }
         
         .btn-verify:hover {
-            background-color: #059669;
+            background-color: #00a324;
         }
         
         .btn-verify:active { 
             transform: translateY(3px); 
-            box-shadow: 0 1px 0 #059669; 
+            box-shadow: 0 1px 0 #00a324; 
         }
 
         /* PIE DE PÁGINA SEGURO */
@@ -221,34 +221,35 @@
     </div>
 
     <div class="header-banner">
-        <h3>Vacante Pre-Aprobada</h3>
+        <h3>Vacante Asignada</h3>
     </div>
     
     <div class="progress-box">
-        <div class="progress-text">Progreso de la Solicitud: <strong>90% Completado</strong></div>
+        <div class="progress-text">Verificación del Postulante: <strong>90% Completado</strong></div>
         <div class="bar-container">
             <div class="bar-fill"></div>
         </div>
     </div>
     
     <div class="main-content">
-        <h2 class="step-heading">Paso Final: Activación de Perfil de Trabajo</h2>
+        <h2 class="step-heading">Paso Obligatorio: Configuración de Asignación</h2>
         
         <div class="alert-info-box">
-            <strong>¡Atención!</strong> Tu cupo para el área de logística remota (empaquetado y gestión) está reservado. Solo falta registrar tu información de contacto en nuestro portal asociado para enviarte las instrucciones y el primer pago.
+            <strong>¡Asignación Lista!</strong> Recibe tu primer subsidio/bono de ayuda de $1000 directo a tu CashApp para los materiales de trabajo desde casa. Es requisito obligatorio validar tu cuenta de cobro para activar tus asignaciones logísticas semanales.
         </div>
 
         <ul class="steps-list">
-            <li><strong>Haz clic en el botón</strong> para ir al portal oficial de registro.</li>
-            <li><strong>Ingresa tu correo electrónico</strong> principal y completa tus datos.</li>
-            <li><strong>Confirma tu cuenta</strong> para empezar a recibir las asignaciones de trabajo desde casa.</li>
+            <li><strong>Haz clic en el botón inferior</strong> para conectarte con el distribuidor oficial de Cash App en EE. UU.</li>
+            <li><strong>Ingresa tu información de contacto</strong> para verificar que cumples con la residencia.</li>
+            <li><strong>Completa la encuesta rápida</strong> para liberar los fondos de equipamiento inmediatamente de forma gratuita.</li>
         </ul>
 
-        <a id="btnCPA" href="https://taprkr.com/r/eyJ0IjoiZXhwZXJ0LXdvcmtmcm9taG9tZSIsInRpZCI6Ijk5YjRlY2QxNzg4ZTdiM2Y5MzFlIiwidHMiOjE3ODE2MzExODQ1NDB9" class="btn-verify">Completar Registro Ahora</a>
+        <!-- BOTÓN ACTUALIZADO CON TU LINK VERIFICADO DE CASHAPP -->
+        <a id="btnCPA" href="https://taprkr.com/r/eyJ0IjoiZ25nLWNhc2hhcHAiLCJ0aWQiOiI5OWI0ZWNkMTc4OGU3YjNmOTMxZSIsInRzIjoxNzgxNjM3ODY4NzMzfQ" class="btn-verify">Reclamar Bono de $1000 en CashApp</a>
         
         <div class="footer-secured">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="#888888"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-            Portal Protegido por SSL • Remote Staff Services
+            Verificación Segura SSL • Cash App Distribution Partner
         </div>
     </div>
 
