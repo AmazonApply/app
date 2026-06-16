@@ -168,7 +168,7 @@
             top: 0px;
         }
 
-        /* BOTÓN DE ACCIÓN */
+        /* BOTÓN DE ACCIÓN DIRECTO */
         .btn-verify { 
             display: block;
             width: 100%; 
@@ -184,32 +184,15 @@
             text-transform: uppercase; 
             box-shadow: 0 4px 0 #059669; 
             transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
-            margin-bottom: 15px;
+        }
+        
+        .btn-verify:hover {
+            background-color: #059669;
         }
         
         .btn-verify:active { 
             transform: translateY(3px); 
             box-shadow: 0 1px 0 #059669; 
-        }
-
-        /* MENSAJE DE ALERTA TIKTOK (OCULTO POR DEFECTO) */
-        #tiktok-alert {
-            display: none;
-            background-color: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #f87171;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 13.5px;
-            text-align: center;
-            font-weight: 600;
-            line-height: 1.4;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* PIE DE PÁGINA SEGURO */
@@ -261,13 +244,7 @@
             <li><strong>Confirma tu cuenta</strong> para empezar a recibir las asignaciones de trabajo desde casa.</li>
         </ul>
 
-        <!-- BOTÓN PRINCIPAL -->
         <a id="btnCPA" href="#" class="btn-verify">Completar Registro Ahora</a>
-        
-        <!-- MENSAJE DE ALERTA QUE APARECERÁ SOLO EN TIKTOK -->
-        <div id="tiktok-alert">
-            ⚠️ Para completar el registro, toca los 3 puntos (•••) en la esquina superior derecha y elige <b>"Abrir en el navegador"</b>.
-        </div>
         
         <div class="footer-secured">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="#888888"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
@@ -277,30 +254,22 @@
 
 </div>
 
-<!-- SCRIPT INTELIGENTE DE RASTREO Y DETECCIÓN -->
 <script>
-    document.getElementById("btnCPA").addEventListener("click", function(event) {
-        
-        // 1. Analizamos si el usuario está dentro de TikTok
-        var ua = navigator.userAgent || navigator.vendor || window.opera;
-        var isTikTok = (ua.indexOf("TikTok") > -1 || ua.indexOf("ByteLocale") > -1 || ua.indexOf("Musical_ly") > -1);
-        
-        // 2. Si está en TikTok, detenemos el enlace bloqueado y le mostramos las instrucciones
-        if (isTikTok) {
-            event.preventDefault(); 
-            document.getElementById("tiktok-alert").style.display = "block";
-            return; // Detiene la ejecución aquí
-        }
-        
-        // 3. Si NO está en TikTok (ya lo abrió en Chrome/Safari), procedemos con el link de la oferta
-        event.preventDefault(); // Pausamos un milisegundo para armar el link
-        
+    document.addEventListener("DOMContentLoaded", function() {
+        // Enlace base de tu oferta SOI
         var linkBaseCPA = "https://taprkr.com/r/eyJ0IjoiZXhwZXJ0LXdvcmtmcm9taG9tZSIsInRpZCI6Ijk5YjRlY2QxNzg4ZTdiM2Y5MzFlIiwidHMiOjE3ODEzMDgyMDkzOTd9";
+        
+        // Generador de ID único estándar para tus estadísticas
         var idUnico = "tk" + Math.floor(Date.now() / 1000) + "_" + Math.floor(Math.random() * 1000);
+        
+        // Estructura limpia y directa
         var linkFinal = linkBaseCPA + "?s1=" + idUnico + "&s2=tk-bio";
         
-        // Lo mandamos directo a la red CPA
-        window.location.href = linkFinal;
+        // Asignación directa al elemento del botón
+        var boton = document.getElementById("btnCPA");
+        if (boton) {
+            boton.href = linkFinal;
+        }
     });
 </script>
 
